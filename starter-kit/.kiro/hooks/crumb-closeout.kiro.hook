@@ -1,0 +1,12 @@
+{
+  "name": "Crumb Closeout (fine sessione)",
+  "version": "1.0.0",
+  "description": "Fallback: a fine sessione senza task spec, verifica se i file AGENTS.md necessitano aggiornamento.",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "La sessione sta terminando. Verifica se serve un passaggio Crumb:\n\n1. Hai modificato file di codice/configurazione in questa sessione? Se NO o se la sessione ha avuto <5 turni, non fare nulla.\n2. Se SÌ, per ciascun file modificato trova l'AGENTS.md più vicino.\n3. Verifica se le modifiche hanno impattato scopo, struttura, contratti o regole.\n4. Se SÌ → aggiorna l'AGENTS.md coinvolto.\n5. Se la sessione era dentro un workflow con task spec (postTaskExecution già scattato), non fare nulla.\n\nSe non c'è nulla da aggiornare, non fare nulla e non mostrare messaggi."
+  }
+}

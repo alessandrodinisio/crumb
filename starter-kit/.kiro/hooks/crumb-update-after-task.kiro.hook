@@ -1,0 +1,12 @@
+{
+  "name": "Crumb Update After Task",
+  "version": "1.0.0",
+  "description": "Dopo il completamento di un task spec, verifica se i file AGENTS.md del progetto necessitano aggiornamento.",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Il task è stato completato. Esegui il passaggio Crumb:\n\n1. Elenca i file che hai modificato durante questo task.\n2. Per ciascuno, trova l'AGENTS.md più vicino risalendo l'albero delle cartelle.\n3. Verifica se la modifica ha impattato scopo, struttura, contratti, workflow o regole dell'area.\n4. Se SÌ → aggiorna l'AGENTS.md coinvolto.\n5. Se hai creato una nuova area/cartella significativa → valuta se serve un nuovo AGENTS.md figlio.\n6. Aggiorna l'Indice Figli nel root AGENTS.md se hai aggiunto/rimosso AGENTS.md.\n7. Rimuovi testo stale o contraddittorio.\n\nSe nessuna modifica richiede aggiornamento, non fare nulla e non mostrare messaggi."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Crumb Manual Refresh",
+  "version": "1.0.0",
+  "description": "Attivato manualmente per forzare un aggiornamento dei file AGENTS.md del progetto.",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "L'utente ha richiesto un refresh Crumb manuale.\n\n1. Identifica i file modificati di recente: `git diff --name-only HEAD~5` (o chiedi all'utente)\n2. Per ogni file modificato, trova l'AGENTS.md più vicino risalendo l'albero\n3. Verifica allineamento tra il codice e quanto descritto nell'AGENTS.md\n4. Aggiorna ciò che è stale o mancante\n5. Aggiorna l'Indice Figli nel root AGENTS.md se necessario\n6. Mostra un report breve di cosa è stato aggiornato"
+  }
+}
